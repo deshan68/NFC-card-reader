@@ -1,5 +1,6 @@
 import "styles/globals.css";
 import type { Metadata } from "next";
+import Provider from "@/components/Provider";
 
 export const metadata: Metadata = {
   title: "NFC Scanner",
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={"relative"}>{children}</body>
+      <body className={"relative bg-gray-400"}>
+        <Provider>
+          <main className="app">{children}</main>
+        </Provider>
+      </body>
     </html>
   );
 }
